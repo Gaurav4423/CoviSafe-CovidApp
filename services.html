@@ -1,126 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Covisafe</title>
     <style>
-        
-     #home{
-         font-size: 25px;
-         text-align: center;
-         color:white;
-         justify-content: center;
-         font-family: 'Bree Serif', serif;
-         font-weight: bold;
-         
-     }
-     .btn{ padding: 6px 20px;
-    border: 2px solid white;
-    background-color: brown;
-    color: white;
-    margin: 17px;
-    font-size: 1.5rem;
-    border-radius: 10px;
-    cursor:pointer;
-     }
-    
-     #services{
-         display: flex;
-         margin:10px;
-     }
-     #services .box{
-          background-color: rgb(233, 229, 212);
-          border:3px solid rgb(221, 19, 19);
-          padding:10px;
-          margin:10px;
-          border-radius: 20px;
-     }
-     #services .box button{
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        position: relative;
-        top:15px;
-        left:75px;
-        font-size: 30px;
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+      #navbar {
+        display: flex;
+        width: 100%;
+        height: 280px;
+        /* justify-content: center; */
+        justify-content: right;
+      }
+      #navbar img {
+        /* justify-content: right; */
+        margin: 0px;
+        margin-right: 1100px;
+        height: 65px;
+        width: 65px;
+      }
+      #navbar li {
+        display: flex;
+        padding: 25px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 1.2rem;
+        /* margin: 10px; */
+        font-family: "Ubuntu", sans-serif;
+        display: inline-block;
+        /* transition: all 0.2s ease; */
+      }
+      #navbar li a {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: white;
+        display: inline-block;
+        list-style: none;
+        text-decoration: none;
+      }
+      #navbar li a:hover {
+        color: crimson;
+        transition: all 0.3s ease;
+        font-size: 1.2rem;
+      }
+      body {
+        background-image: url("https://ichef.bbci.co.uk/news/976/cpsprodpb/14A35/production/_115033548_gettyimages-1226314512.jpg");
+        /* background-image: url(1.jpg); */
+        background-repeat: no-repeat;
+        background-size: 100vw 1000px;
+        z-index: -1;
+        opacity: 0.89;
+      }
+      #home {
+        font-size: 25px;
+        text-align: center;
+        color: white;
+        justify-content: center;
+        font-family: "Ubuntu", serif;
+        font-weight: bold;
+      }
+      .btn {
         padding: 6px 20px;
+        /* border: 2px solid white; */
+        background-color: crimson;
+        color: white;
+        border-color: transparent;
+        margin: 17px;
+        font-size: 1.5rem;
+        border-radius: 10px;
+        font-weight: 450;
+        font-family: "Ubuntu", sans-serif;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background-color: crimson;
+        font-size: 1.6rem;
+        font-weight: 500;
+        transition: all 0.4s ease;
+      }
 
-         justify-content: center;
-         margin: 10px auto;
-         text-align: center;
-          text-shadow: 2px 3px rosybrown;
-          margin: 17px;
-          font-size: 1.5rem;
-          border-radius: 10px;
-          cursor:pointer;
-           }
-        
-           #services .box img{
-               height: 100px;
-               display: block;
-               margin: auto;    
-           }
-           #client-section::before{
- content: "";
- position: absolute;
- background: url('https://www.usda.gov/sites/default/files/covid-items-2.png');
-  width: 100%;
- height: 200px;
- 
- z-index: -1;
- opacity: 0.8;
- margin: auto;
-}
-.h{
-    display: flex;
-    font-size: 30px;
-   
-    justify-content: center;
-    text-align: center;
-   font-family: Georgia, 'Times New Roman', Times, serif;}
-#contact-box{
-display: flex;
-justify-content: center;
-align-items: center;
+      .h {
+        display: flex;
+        font-size: 30px;
 
-
-}
-          
+        justify-content: center;
+        text-align: center;
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+      #contact-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-       <h1 class="h">Our Services</h1>
-    <section id="services-container">
-        <div id="services">
-            <div class="box">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADjCAMAAADdXVr2AAABRFBMVEX39/fy8vPsHCSs0VhtbnE6Ojz+/v729vdYWFrsAABMTE74///8/PxVVVdRUVP4/f01NTcnJyotLS8wMDItLTDsFh8kJCf29Prn5+ju7u/sAA5lZmnMzM3e3t/Y2NnsDxqp0E5hYWPPz9C8vL2KiozDw8SenqB6enypqas+PkB/f4GRkZNGRkjt8Oinz0mampuwsLIxOjzwurz03N3sOkDrZmrscnXrp6nsen3rlpjrSE3phYjrnZ8oOz3B24yw02HX5bvI3pq80JWy0W3h6tDsVFjv4eLqIyrsvr/wzM3uj5HpaGvusbPpWl7lfH/rpKXoLzbeIyi8SUpdc3fJKi2mMTSQMzWjV1m3LjBaPT1vOzuAaGlpOjreOjw8TE6zMDKFNznQ4qxNOzyXNDXM0cbRpqfFz7Ld6Mi/z6PZ4c260Iu92n7gGqacAAAUiUlEQVR4nO1d+1/a2LZPLBAggRAkQHg/BRGFqlV89HWqaK2tnTOPM2fumXum586dzlz//9/vXjuvnbADIdRs2o/rl1GrTL6stdd3Pb4JHPdoj/Zoj/Zoj/Zoj+bbZFkWscky60v50ibJIn+wf342OTqanJ1fH3DiNwRRFg9OLtVEolQHK5USiY1nd9NvBKHI350iZBsOq5cSl7fc1w9Q5m/UkrpBsXri6s7fMZT1Yyuv3aGVxGO1RMOGTU1cXYsLXgHh0t7ent9MJjcnx9dTeZ1CWpyeJqieswG+0+ZcryTy+5NDdGhLJTiza3Zoxf1EfR44HKIbb70cKItvjxKJuuP9UdGhPb3lFvk8DBNvEovAYQceUy9WEq9P6e+OmlDPeeYeFCd+0CFLnFDwiQeX3nGNzvOtKIUPibw+v+ho+CT5Zn5cq4nLKUsHih98o0P4XPEpT0+9861h9fo+uxMoHi+BDuF7S7pCfOuuAuh/dMMKn3ywFDqUEDUC3f58NrHxTVjh++jvAi2rv7euVLz2f2iPmOATzxYenZkrvTXCU/aPDv3VBwb45OlyoQmmbvD4b6UpvUL1wncXPj7xmZ/M4LKSwQ6Hy4W1MymFYdKSecUwnF3ED0uGtfpRCBmeOAngPOS+c5mT3y79zpTOQg5Pbem8gk39KHLykqEJljgItTyTb4PBQ8dIvA0Q1gSnhGHi+0CxicLsRrxa3nnwtoTpPj4gug31cBnKs63+LkT3SctnB8tOgzgPuU9bfFlfyuTzZY5ePUHWl8HQbZTuwuO+pWihNDm4DpAsXaZehhed4hIRpp6KkhisCHBYgg8P3hLeSFzLy/3BvNcJx3j/V6UeQlDJJwF50rbSTWjwlqhZEvtwVQFLVNLqz0I7fP6bIajCwORle9/ZVzoMzXtT394zO1jxZuXorIcXnH5doV7h0FytEDAsERY6/6GGyViGelEOVGqygSf+6u9a1Q0B0gokT/EsaJnKAN6Rv2stnQOwo8SUC9LEMoPnl8bqUGlMEzhExa/Hez4TRQlGzOKHEm5GA44vLFM3wqup/fV7JWhitIT+xVKzTRq80xBraj9jQDwAwtPeEma/1bwXYtXCyX4GJpBROB5OqR6dPvORh4VYc/qKzjosP0Q9CdVXj069eA3JxA8L8enOU1Xr2gIPaOyXC80WVtV12OzIdzqD4EmQ+G4FfGZtHpItvNbEAQSTWYoBA8r7K0RnyIPqRctLnE1ka3+Le+2Ao239BUIddC6kabzVsUtvHKqBh79m0x+m8fN8UYfBFkkfdW6F0T2x+QzNxLs54ak7jxgg4R9oQQ+f3jeGjO/UM9ZwBeUgujqskMXLgNEZvvNgh+zpDH36d+oYToM7j4NFZz3EetM28dwDH04Erg4PR2eAhTz+23DXexa+y1K9TmnccZHiikS9wA60QKEK0sKw6dGzy8MNEGGCHhN01HD56kd5tidUr8Rldy+G1UNcL7hMV/Vr04O3+8d3J0fPnp0C1GOZQnK4jAkwzlXVEHdfHibJhhga1NBQ/M7OpXHvHmCxHr7sw4fN1qR4zGxPaVTVp6iMoShQRwIek525jVaSQnRaTi0dnn7cgEDWRdSqF9rEecjoJN2s7/lnk5u72+u306nGmXfYyLTWvHQCR1IvQ0t36Nd4OLPXtyc3Z0envx5eJYgEZWINW/AocZWtXq+309VMgIjfsIAdXdvV4eHp0dnZyf71hJIhcSmjLxus7s06sqIoTKfTt/u3xzeTd+8Pr2BljSxkvU6sFSlHwMrltonPVqpAiOlqfWrxhce5ODq9ujfJQivgbBzmAAJZbNyMmNYcWfhO/KV7kFxxWNeCizYZn1nZuyAJ+5YUqd3EjuuVwYXlLQvfpOQnD+rRCcsG3LxfT27O0Zk9mHKyeWRliaX2vYhQlQctlFiqO+jLZsW4GEl+993fv3Nh0W0mOqGa0QeDz8wzm0iop+/fH50cH+8jsJqRn0JHF9tCmAacZH3dk1AejfG19k7v++//rpLQrn748afffvrxhysSob4P21B1kQp5PlV8V5xe3dWvDi/fTc5Cr1V4iEjz/yoN0DfVYqU/iOBQjfyjbjrtu59/++fT58+fInv+9JcfbHy4ehQndcyA3nsKFW6zCb9WqZXReYvp4KRYF58/HRrYf9V1p/2yjZBFLXv6/F/fWQBL+irso7xgy1T/GP4NGhICVO5CPHLIaZ2Iy77/9eefsNN0WJlsVlGyGQD49GcTn75sKE0W9EalSwb3D2F4Fa7aHvUIp9n23xayzayyHdnqVrr9SG4T/eD5v81xJ84p7/bnz10SEwZFtBSrQTaJ0JBhi4OrMjklm+6MqwIngEnFTh7wmQcQr8L2p/NmumriNvQyMyZVu1s9D1yGlbPZfA45DZVrgsCbJlUyCPb2leEYsw7xHJPW6543+z0ItJik1cYdaji6bDCuIdawkekmVFF8Pv1Nd5+1pRM9lI+l03m3an55Q07zAw28V5yBho1rKyg8DdYvGXdqeLTtYd8yJA18QcPwulR0KD4jmejT/9G9ZQj76EMXr7s0HxDe2D+8LQ94QgW5759GdOp3PFEHuvWrg7A7c6nlDx6K387YAx7Pb6PoNA8X9h5Pic3SZbjHDtDF+IXw4GiO2jWefvLM6DS5Qe+FKIvoxFnI7U8sxtX6vbnwELRBv1IUSCqgRGc/F336oxGduGSZ2V2rYY6MENHFit1RU1Fym01vZJGdMThtHjIdXkuJPv1Fh4eXDaJbc1f6OA0JHUIm1caDYV7ZhDIkmqJCaw763SLnAxo2LYeozyxcjnjBfQ9Y4llIj86ISa1ROatkdWiofFQyNKe1/DjNNg4VbCbzbaDGzhmaalhLBInrDxULWTYfLY+6mvOkbXWrC04aDd7Opl1Xz/CB9zMXvqzFWkMlYzhNSQ7gYHECt2Nn/pYGdfJy0MCEdtaqy2b44DSk3i42zmegUVOizZ2ulQ2FcbNc7iGnAdblkenwqnmL2N188GHOrOwLo0OOyw63ahoJRKj1W8VgTiPwDRGxX82CC6/7kVp5aNfGgttHKyLDxvVsYieP3cfQyjAhmolmtqvcylBoJvSzVlVNBOb70IYOsRHips3q6o6iwwNi/5cTXmh8gA2hU9pfwHeFQmEXGfyX/DFqGradgRlmWy6hnjPTXBldgb/4dP+kAfbyxatdGyDXhMPHgg+wxQab0Wx7xdAs8J9e7jWemNZovLgwAbqJPTEJiQ8MeOlMVCmuiO7VExubbnv3hgeFrkIQu1oKexqWjWaSKzmvsPvGDQ678BXGJxQR7fzHHHeGxwem5aOZ+CpHr3BBwYYd+Brjk7ateVKIfEDCS63gvcIFzXW6/14APg4d7ucwjQ+XDwyToJJewXm7nugQPvCfMNaJPeQxrWExlLjzteDue0nC2dvbc6DdQ+dPqGFiD3tMa8JDiTvrPepaYIXXBB3cf7qISa8d+Bq76JdgWI36AwbgYP2jRDc7QXPLX3s2lN0Ytt/dx08qZ6LZ/2UlMUKJO5MOCK9wT5wzHV2s+jfSf3t/8dxoM5obs5IGSKgjC8rru3uz8Ip/NJzu4yA+BjFG8GKoI1O6gdxHnrwnbwx4QqXR2EOlp4kPETsq2rdZwZP6uejmKBg8Mm3uSQa+1guUYmIm8sZnXkqiw1dkBQ8l7kxZCgLPwXmNi5jDfre4D4hd6TLT5WSDEvtnghX29l7FihIBz0wx9wUg9s0dZocPEbuyPLELqFGwDhhQHkL0FwHPTDGNAhB7pskMHk7cy8ATBI7TqoKdWQzKq342vkD/Wq0a8PZ4vAfLhvfYFadhYh/4zS0ImlDsbkXSTa7wouHgBKkYq3IxrlitFnkpJv35xoQHezClxerwocSdGfqBh6DxtXGnmUymU/GkZnrPhCdoyIEcQohNa1nwuK1cNNdnBS82RIl7wajMcFovjZCl4vFUOrldKXxq2JQnacUaAib89Qo7ki+2zOAs4I4902N2+BaMWwBabbxTxk7D0JLlnXbVTi2NT3/heMQZBZXV1Vrrj7/dm9hRUwTEHmVG7JC46cSOkEnFSr+HkKWx05D3Bv2Kpi/4zJqs8YnImAhl6//squUJ9LRcCnVdTIm9OUPs4LRq2+W0sWMLZkK4B1x8kadU1XjkwnUQsbeZETsKnU0XMhD/DVI6tBSCluptzazSzdT5pPHyVa31+5+mEzWiqt6Djo8xsZchcRMXXm2PImnCaR3aKh19f2F1DA2Ybr40q+qWDe8e5i2wB8vEmcFDiTvbt6+ei5NO61L0D0AR1YrgGEWAp4zjZ3AC/Oiz/vuI2BVmxF6BxG3nFm4nDU5rwlZ2ZnWJSxYUuPFhWSi82iPhNT47Kc/Im/CKbIkdqmo7twjjYWQEq3QKNAECVz+SSY0vvCHh4RRDUB5y3oXxh1vZaHaLWXSijkwhiF1zSjNNp/GtcSduJ9Ihik7nHLDxBKWYP/58YZXar41VA6jLMhFm8DpziR2eL1zsmk7D2SYO2UaA9YIjPPUdkfXdG/sNgz0YI3Sc1IbETSd2DteZhNOSkVG7agl3Cp+c+Eh7uWsfZxinVlnhq6LYibuJHbOfUWeaThv0W7xTk+SJr0Ggw3uwHDtiR4k774JmNwe202jCHburddjeveP12rnoZofZ4Yu4iL2y1YtbzQE4zawzKVbYvZ9xYMPYf1nwgNhTzHoilLhzBLELzaThtDRuDhaorQqf3ziWC40nr3cLzl+B+MiyupUZE3vEPnw6sad6/YpP9V/h4vXLhmFP7l/xBfcvgMBFqbByH07chPfaKWqdOQ9gYffiFbLPoI2Y/WdQrubYEXscEjeBz7dk0wmRhkx/wRZTYseJ+4G0Ozo+tsSeW2EP5scktsQOifsh4WFiZ7YHg8StaA8ID5SrjPdglQc8fEIR5ZYkuz0YdGQPeviGUYZ7sJaT2L+8YWJntwfLo8T9gOgwsW+OmO7BHkq1iuHhPSlLYg8ucPHERL4gyO0ZodM79i9K7LhnJLosrgwCKGbjMiW4wIWCDDf68WGEmC+OID6Y9XzQka0oXDWg8fZuIk38wxoIXFa7KUPgBDziNRZK0OkTW/tiNpoZsiT2gAIXExpyGjktbO7o00LTOBinfn0CF33EC06zdhNJ2E24Z8GMBS6bAQQu2GnOEW8TNfrUe+HWYA+2hMAFL1NarhEvdaFk/kEtz1jg4pfYdSnBKJJyOK2lce77qpzfwziVmfTRp8AFQdOcI940LJRoC070HrTbTmJX2BF7dpHAxdR/pBwj3hZlxAuBq78HbmJnJnCRQODiSey4xnJICTxGvKZwyXgPkvYMgL3AhUrshpQAOS2ZMjJ/mj7iNXYTpJyiSbQhUPgNmXmPJnCh6D+aO21K5tffA1K4pGtgJOL3hDRTgUveJXDhJKix0jZdp0H/QXUavAdNl3Bp5j3g8J6UlfsExOs5UgDidJqH/kMPXNNpEMCeu4n1Ivbi0Haap/4DBW7a4bQ5uwm8B2NL7I49mOE0je40Z51JEy7xLmJnK3DpOgUuwtbI22kO4ZLne4AapC1SEcRU4AJ7MJLYZ6ChH0CdOSCSSIpeZxqBi2rtZISIBxC4sCN2nLi9Do5B10miZMFOo2lgNCJwk3apgAUu7IgdKxPpxC7MSAlozwABDUzVrYEhFUF5iA9GJo1zMwIXs85MOutMnuo0VLIMXA1S1aHdwspVpnuwpuPwoQt20HWERtcYWtUIXEsDM6a8B0DsbAUuWeKqa67moKJRoWkzwiWvh9fgPdjaCFyKQ1Ic7tUc9FJJh3DJWwODiB3llhRL5apD4IKqsrgXXS/RIBHRmUGFH1OBC0nsY486U4A6k5hnxuc2SCPiwZYRpgIXlFuGZBXl0Rw455megVvBgZsuE29YHwRQzIa5KafAxXXBWGeccswzvRokMnCHBLGzFbh06AIXnPlRnTlcNM+07+wgO3tixKGBspkROprAxayxUq4htGdX67izo4M7e+KXpDjsSVnhq7qekSEIs80B5VlzZoO04M4OXhe4sOvY4SESOWK4VUs555l0iqC8B15d7RoQOyFw0YbmBdPo2hzEL26Q7D+pshW45KJZ4nGwXBOc5lFn6jdi2mVb02iQPJAZr4gKvxxbgQvBU1165hf4lnsQT9daz8JjqlzlncpVnppEnA1San6d6TKd2Jnt2OcT+0xXu0Pc1eAPXpupMHeHeqO3OYR2Om2OQH4uPHbDTorAxSl28B5C+4XHcpykC1zIUXyx4ppnLn6m8TxjLFyVcOK23+wWWWf6fKbxXHhJluOWGYGLltbpmj6IX9rwLHCb3QfzSPiWA/vwSWVrnrkiMmzwtOMcM+GjIXAhib22ZOafa9JOluHtNmBYmTiH2FcwQRrlo1GFWbcOFvAJLn7AFSOoJtpssvxIrAdRruql3CAHgTFk+6GWyz3BxQ80CVUFnWROAVlXNl1k6jyd2IdfRBVvlHKRbfNp85l8h2OMDgtc8isrV5HTUBPfSWX1D5XCnzClRGoss4pungKXZZzGV/q97XzO/ogAZbvXL8ZYu46b+wQXf9BABKLYTsspShyV4LF1wMYZApcAylWYcQotcFqW+PSDTKTf4tcFGjYgdmW54MTj2/aIdFrWctoaQQPDxN7yjQ8hg7XsULE/siKXj0a2KuvlNMvcApe5ToPnSZQzCpFEculOGx7otY7QwPAebPbxSTNOw7v0ZNb1OSMVTVpbZLrB4Zv3RGB9WTSKkElEyeHPGVlfp9kGi6JM3HtcVh13UtZJi25mlUxz1C2uu9Nsg2edZzu0h4DwUGORTlOGvXFN+BqcZltsC3UuyoBo9VCNhei6E8+TmT8PHw6zfpl/scWaqLzPpbsS/jBLlPkRXUcddD3s9VtrnB4XGJ9C+DJKetRttdo78ay7xoKT9pVCw8ZDZ40/bZX47KxcfhjprytdL2ex/qbpMf2kZVPrTddLWkwbDdFxQ5bLb6MaS/tmkBkGn1m30+mMviWnOUzCjxX9FpE92qM92qM92qM92prZ/wNTKrCJzoTv4wAAAABJRU5ErkJggg==" alt="">
-                <button class="button-secondary"  onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Health Report</button> 
-                <p class="center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, culpa suscipit error
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus provident fugiat aliquam minima at explicabo. Earum eveniet quaerat, sunt molestias nesciunt quas! Quis.
-                    sint delectus ab dolorum nam. Debitis facere, incidunt voluptates eos, mollitia voluptatem iste sunt
-                    voluptas beatae facilis labore, omnis sint quae eum.</p>
-            </div>
-            <div class="box">
-                <img src="https://thumbs.dreamstime.com/z/book-your-medical-appointment-online-using-mobile-app-doctor-sitting-desk-background-wearing-face-mask-190595834.jpg" alt="">
-                <button class="button-secondary"  onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Appointment</button> 
-                <p class="center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, culpa suscipit error
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et qui, repudiandae similique nam, recusandae quidem ab asperiores ex, aut fugit labore veritatis facere?
-                    sint delectus ab dolorum nam. Debitis facere, incidunt voluptates eos, mollitia voluptatem iste sunt
-                    voluptas beatae facilis labore, omnis sint quae eum.</p>
-            </div>
-            <div class="box">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8C4XH3n7grQPKwgMBmQORAgNzIs2Sh-S4oQ&usqp=CAU" alt="">
-                <button class="button-secondary"  onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Order Items</button> 
-                <p class="center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, culpa suscipit error
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde laudantium a incidunt animi ad, ab dignissimos vero? Unde numquam odit repudiandae perferendis nisi.
-
-                    sint delectus ab dolorum nam. Debitis facere, incidunt voluptates eos, mollitia voluptatem iste sunt
-                    voluptas beatae facilis labore, omnis sint quae eum.</p>
-            </div>
-        </div>
+  <body>
+    <nav id="navbar">
+      <div id="logo">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqZg9ggmY_9BQ2snRyA5xFvIm2mKgOUKs8eeyZbNIqnzThiue80cUixp6oC18_7C0QCKo&usqp=CAU"
+          alt="MyOnlineMeal.com"
+        />
+      </div>
+      <ul>
+        <li class="item">
+          <a href="http://127.0.0.1:5501/loginpage.html" target="_blank"
+            >Home</a
+          >
+        </li>
+        <li class="item">
+          <a href="http://127.0.0.1:5501/services.html" target="_blank"
+            >Services</a
+          >
+        </li>
+        <li class="item">
+          <a href="http://127.0.0.1:5501/contact.html" target="_blank"
+            >Contact Us</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <section id="home">
+      <h1 class="h-primary">Welcome to Covisafe</h1>
+      <button class="btn">View Details</button>
     </section>
-  
-   
-</body>
+  </body>
 </html>
