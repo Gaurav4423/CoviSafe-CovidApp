@@ -1,0 +1,30 @@
+DROP PROCEDURE IF EXISTS get_hostel_health_info;
+DELIMITER &&
+CREATE  PROCEDURE get_hostel_health_info()
+	BEGIN
+    	DECLARE N_Healthy, N_Positive, N_Isolated, N_Quarantined INT;
+        DECLARE h_name char(30);
+        DECLARE finished INTEGER DEFAULT 0;
+    	
+        DECLARE cur_hostel_name CURSOR FOR SELECT Hostel_Name FROM `Hostel`;        
+        DECLARE CONTINUE HANDLER FOR NOT FOUND SET finished = 1;
+        
+        CREATE TEMPORARY TABLE stats(HName char(30), Healthy INT, Positive INT, Isolated INT, Quarantined INT);
+        OPEN cur_hostel_name;
+        	get_hostel_name:LOOP
+                FETCH cur_hostel_name INTO h_name;
+                
+                IF finished = 1 THEN LEAVE get_hostel_name;
+				END IF;
+                
+                SELECT count(*) INTO N_Healthy from `Student` NATURAL JOIN `Resides_In` WHERE Resides_In.Hostel_Name=h_name and Student.Health_Status='Healthy';
+                SELECT count(*) INTO N_Positive from `Student` NATURAL JOIN `Resides_In` WHERE Resides_In.Hostel_Name=h_name and Student.Health_Status='Positive';
+                SELECT count(*) INTO N_Isolated from `Student` NATURAL JOIN `Resides_In` WHERE Resides_In.Hostel_Name=h_name and Student.Health_Status='Isolated';
+                SELECT count(*) INTO N_Quarantined from `Student` NATURAL JOIN `Resides_In` WHERE Resides_In.Hostel_Name=h_name and Student.Health_Status='Quarantined';
+             	INSERT INTO stats values(h_name, N_Healthy, N_Positive, N_Isolated, N_Quarantined);
+             END LOOP;
+        CLOSE cur_hostel_name;
+        SELECT * FROM stats;
+        DROP TABLE stats;
+    END &&  
+DELIMITER ; 
